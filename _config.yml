@@ -4,8 +4,8 @@ email: Project.Chroma.devs@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Chroma is a color-based 2D platformer written in Java.
   In addition, it features the ability to be extensively modified through Chromods.
-baseurl: "/ProjectChroma.github.io" # the subpath of your site, e.g. /blog/
-url: "https://open-sourceress.github.io" # the base hostname & protocol for your site
+url: "https://ProjectChroma.github.io" # the base hostname & protocol for your site
+baseurl: "" # the subpath of your site, e.g. /blog/
 twitter_username: chroma_devs
 github_username: ProjectChroma
 source: _pages
