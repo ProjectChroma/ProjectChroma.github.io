@@ -1,6 +1,6 @@
 # Site settings
-title: HomeHelp
-email:
+title: Project:Chroma
+email: Project.Chroma.devs@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Chroma is a color-based 2D platformer written in Java.
   In addition, it features the ability to be extensively modified through Chromods.
