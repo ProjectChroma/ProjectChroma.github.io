@@ -2,7 +2,7 @@
 	<head>
 		<meta charset="UTF-8"/>
 		<title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
-		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans">
+		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Indie+Flower">
 		<link rel="stylesheet" type="text/css" href="/res/main.css"/>
 		<link rel="stylesheet" type="text/css" href="/res/slideshow.css"/>
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -10,7 +10,11 @@
 	</head>
 	<body>
 		<nav id="header">
-			<h1>Project:Chroma</h1>
+			<h1>{{ site.title }}</h1>
+			<a href="/">Home</a>
+			<a href="/about">About P:C</a>
+			<a href="/demo">Demo</a>
+			<a href="/devs">About the Developers</a>
 		</nav>
 		{{ content }}
 	</body>
