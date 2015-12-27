@@ -13,6 +13,13 @@
 	border-bottom: 5px solid black;
 	box-sizing: border-box;
 }
-#header + *{
-	margin-top: 55px;
+#header > *{
+	display: inline;
 }
+#header > *:not(:last-child){margin-right: 20px;}/*Space out elements*/
+#header > a{
+	color: inherit;
+	text-decoration: none;
+}
+
+#header + *{margin-top: 55px;}/*Make room above element for header*/
