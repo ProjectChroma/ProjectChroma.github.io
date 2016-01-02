@@ -4,7 +4,7 @@
 <script type="text/javascript">//Initialize slideshow elements
 	$(function(){
 		$(".slideshow").each(function(){
-			$(this).children("img").css("height", $(this).data("height"));
+			$(this).children("img").css("width", $(this).data("width")).css("height", $(this).data("height"));
 		}).slick();
 	});
 </script>
