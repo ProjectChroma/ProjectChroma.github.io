@@ -2,16 +2,19 @@
 	<head>
 		<meta charset="UTF-8"/>
 		<title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+		<!--Stylesheets and fonts-->
+		<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Play">
-		<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/res/main.css"/>
 		<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/res/slideshow.css"/>
+		<!--Scripts-->
 		<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 		<script type="text/javascript" src="{{ site.baseurl }}/res/slideshow.js"></script>
 	</head>
-	<body>
-		<nav id="header">
-			<h1>{{ site.title }}</h1>
-			<a href="{{ site.baseurl }}/">Home</a>
+	<body class="w3-container">
+		<div id="header" class="w3-topnav w3-large w3-white w3-border-bottom" style="font-family: Play !important;">
+			<span class="w3-xlarge">{{ site.title }}</span>
+			<a href="{{ site.baseurl }}/"><i class="fa fa-home w3-large"></i></a>
 			<a href="{{ site.baseurl }}/about">About P:C</a>
 			<a href="{{ site.baseurl }}/demo">Demo</a>
 			<a href="{{ site.baseurl }}/devs">About the Developers</a>
