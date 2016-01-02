@@ -1,4 +1,10 @@
 <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/res/slick.css"/><!--Slick core CSS-->
 <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/res/slick-theme.css"/><!--Slick theme CSS-->
 <script type="text/javascript" src="{{ site.baseurl }}/res/slick.min.js"></script><!--Slick scripts-->
-<script type="text/javascript">$(function(){$(".slideshow").slick();});</script><!--Initialize every slideshow element-->
+<script type="text/javascript">//Initialize slideshow elements
+	$(function(){
+		$(".slideshow").each(function(){
+			$(this).children("img").css("height", $(this).data("height"));
+		}).slick();
+	});
+</script>
