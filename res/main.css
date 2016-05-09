@@ -1,0 +1,59 @@
+.light,
+body {
+  background-color: #dddddd;
+  color: #333333;
+}
+.dark {
+  background-color: #333333;
+  color: #dddddd;
+}
+.red {
+  background-color: #aa3939;
+}
+.gold {
+  background-color: #aa8e39;
+}
+.blue {
+  background-color: #343477;
+}
+.green {
+  background-color: #2d882d;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+#header {
+  font-family: 'Oswald';
+  background-color: white;
+  height: 60px;
+}
+#header > h1 {
+  margin-right: 0.25em;
+}
+#header > * {
+  display: inline;
+  vertical-align: middle;
+}
+#navigation {
+  font-size: 16pt;
+  display: inline-block;
+  height: 100%;
+}
+#navigation > a {
+  display: inline-block;
+  height: 100%;
+  background-color: #d4ba6a;
+  transition: background-color 0.5s;
+}
+#navigation > a > span {
+  vertical-align: middle;
+}
+#navigation > a:hover {
+  background-color: #ffeaaa;
+}
+#content {
+  font-family: 'Bree Serif';
+  padding: 1em;
+}
+
