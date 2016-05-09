@@ -1,0 +1,71 @@
+//Constants (http://paletton.com/#uid=7001b0kllllaFw0g0qFqFg0w0aF)
+@red: #AA3939;
+@red-light1: #D46A6A;
+@red-light2: #FFAAAA;
+@red-dark1: #801515;
+@red-dark2: #550000;
+
+@gold: #AA8E39;
+@gold-light1: #D4BA6A;
+@gold-light2: #FFEAAA;
+@gold-dark1: #806515;
+@gold-dark2: #554000;
+
+@blue: #343477;
+@blue-light1: #565695;
+@blue-light2: #8080B3;
+@blue-dark1: #1A1A59;
+@blue-dark2: #09093B;
+
+@green: #2D882D;
+@green-light1: #55AA55;
+@green-light2: #88CC88;
+@green-dark1: #116611;
+@green-dark2: #004400;
+
+@black: #333;
+@white: (#FFFFFF - #222);
+@header-font: 'Oswald';
+@content-font: 'Bree Serif';
+@header-height: 60px;
+
+//Background coloring
+.light{background-color: @white; color: @black;}
+.dark{background-color: @black; color: @white;}
+.red{background-color: @red;}
+.gold{background-color: @gold;}
+.blue{background-color: @blue;}
+.green{background-color: @green;}
+
+//General CSS
+*{margin: 0; padding: 0;}
+body{&:extend(.light);}//Start with light background (Space will toggle)
+
+#header{
+	font-family: @header-font;
+	background-color: white;
+	height: @header-height;
+	& > h1{margin-right: 0.25em;}
+	& > *{
+		display: inline;
+		vertical-align: middle;
+	}
+}
+#navigation{
+	font-size: 16pt;
+	display: inline-block;
+	height: 100%;
+	& > a{
+		display: inline-block;
+		height: 100%;
+		&>span{vertical-align: middle;}
+		
+		background-color: @gold-light1;
+		transition: background-color 0.5s;
+		&:hover{background-color: @gold-light2;}
+	}
+}
+#content{
+	font-family: @content-font;
+	padding: 1em;
+}
