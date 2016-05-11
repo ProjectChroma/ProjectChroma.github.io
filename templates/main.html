@@ -3,15 +3,16 @@
 		<meta charset='utf-8'/>
 		<link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Oswald|Bree+Serif'/>
 		<link rel='stylesheet' type='text/css' href='/res/main.css'/>
+		<title></title>
 	</head>
 	<body>
 		<div id='header'>
 			<h1>Project:Chroma</h1>
 			<div id='navigation'>
 				<a href='/'>Home</a>
-				<a href='/demo'>Demo</a>
-				<a href='/about-us'>About P:C</a>
-				<a href='/about-game'>About Chroma</a>
+				<a href='/demo/'>Demo</a>
+				<a href='/about-us/'>About Us</a>
+				<a href='/about-game/'>About Chroma</a>
 			</div>
 		</div>
 		<div id='content'>
@@ -19,3 +20,23 @@
 		</div>
 	</body>
 </html>
+<script class='seteRun'>
+var siteTitle = 'Project:Chroma';
+if(page.getAttribute('page-title')){
+	document.getElementsByTag('title').first().text(page.getAttribute('page-title') + ' - ' + siteTitle);
+	var content = document.getElementById('content');
+	var contentTitle = document.createElement('h1').text(page.getAttribute('page-title'));
+	if(content.children().isEmpty()){
+		content.appendChild(contentTitle);
+	}else{
+		content.children().first().before(contentTitle);
+	}
+}else{
+	document.getElementsByTag('title').first().text(siteTitle);
+}
+var links = document.select('a[href^=http]');
+for(var i=links.size(); i>0; --i){
+	var link = links.get(i-1);
+	if(!link.hasAttr('target')) link.attr('target', '_blank');
+}
+</script>
