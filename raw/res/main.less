@@ -41,6 +41,7 @@
 *{margin: 0; padding: 0;}
 p{margin-bottom: 1em;}
 body{&:extend(.light);}//Start with light background (Space will toggle)
+.dark > #header{background-color: (@black + @black);}/*Header in dark mode has slightly lighter background than body*/
 
 #header{
 	font-family: @header-font;
