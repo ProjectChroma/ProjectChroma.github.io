@@ -26,6 +26,10 @@ body {
 p {
   margin-bottom: 1em;
 }
+.dark > #header {
+  background-color: #666666;
+}
+/*Header in dark mode has slightly lighter background than body*/
 #header {
   font-family: 'Oswald';
   background-color: white;
