@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<template>main</template>
+		<attr key='page-title' value='Chroma Gallery'/>
+	</head>
+	<body>
+		<div id='image-grid'/>
+	</body>
+</html>
+<script class='seteRun'>
+var grid = document.getElementById('image-grid');
+var files = page.getInputFile().getParentFile().listFiles();
+for(var i=0; i<files.length; i++){
+	if(files[i].getName().endsWith('.png')){
+		grid.appendChild(document.createElement('img').attr('src', files[i].getName()));
+	}
+}
+</script>
