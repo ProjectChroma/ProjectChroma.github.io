@@ -26,10 +26,12 @@ body {
 p {
   margin-bottom: 1em;
 }
-.dark > #header {
+body {
+  /*Header in dark mode has slightly lighter background than body*/
+}
+body.dark > #header {
   background-color: #666666;
 }
-/*Header in dark mode has slightly lighter background than body*/
 #header {
   font-family: 'Oswald';
   background-color: white;
@@ -94,11 +96,27 @@ p {
   font-size: 14pt;
   padding: 1em;
 }
+#content.center {
+  text-align: center;
+}
 .image-wrapper {
   text-align: center;
 }
 .image-wrapper > img {
   display: inline;
   width: 40%;
+}
+svg {
+  margin: 5px;
+}
+svg > text {
+  fill: white;
+  font-size: 35px;
+}
+svg > polygon {
+  fill: #aa8e39;
+}
+svg:hover > polygon {
+  fill: #d4ba6a;
 }
 
