@@ -3,6 +3,76 @@
 		<template>main</template>
 	</head>
 	<body>
-		<p>The quick brown fox jumped over the lazy dog.</p>
+		<h1>Welcome to Project:Chroma!</h1>
+		<p>Project:Chroma is, at its heart, a team of three high school students and a cool idea for a game.</p>
+		<div id='hex-links-1'></div>
+		<p>Chroma is a puzzle platformer all about changing the color scheme of the game. This influences which platforms in the world are tangible. Switching color schemes can open tunnels, create bridges, and bypass walls.</p>
+		<div class='image-wrapper'>
+			<img src='/about-game/gallery/tunnel1.png'/>
+			<img src='/about-game/gallery/tunnel2.png'/>
+		</div>
+		<div class='image-wrapper'>
+			<img src='/about-game/gallery/spaceout1.png'/>
+			<img src='/about-game/gallery/spaceout2.png'/>
+		</div>
+		<div id='hex-links-2'></div>
 	</body>
 </html>
+<script class='seteRun'>
+document.getElementById('content').attr('class', 'center');
+
+function createLinks(index, links){
+	var side = 100;//Side length
+	var sideAxial = 125 / Math.sqrt(2);//Width or height of a diagonal side
+	var size = side + sideAxial;//Size of hexagon
+	for(var i=0; i<links.length; ++i){
+		var a = createHexagon(links[i]);
+		document.getElementById('hex-links-' + index).appendChild(a);
+	}
+	function createHexagon(link){
+		var svg = document.createElement('svg');
+		svg.attr('width', size);
+		svg.attr('height', size);
+		
+		var polygon = document.createElement('polygon');
+		var points = [
+			[sideAxial, 0],
+			[size, 0],
+			[size, side],
+			[side, size],
+			[0, size],
+			[0, sideAxial]
+		];
+		var sPoints = '';
+		for(var p=0; p<points.length; p++){
+			sPoints += points[p][0] + ',' + points[p][1];
+			if(p+1 < points.length) sPoints += ' ';
+		}
+		polygon.attr('points', sPoints);
+		svg.appendChild(polygon);
+		
+		var text = document.createElement('text');
+		var x = link.xStart, y = size - x + (35/2 / Math.sqrt(2));//35 == font size in main.less
+		text.attr('x', x);
+		text.attr('y', y);
+		text.attr('transform', 'rotate(-45 ' + x + ',' + y + ')')
+		text.text(link.text);
+		svg.appendChild(text);
+		
+		var a = document.createElement('a').attr('href', link.href);
+		a.appendChild(svg);
+		return a;
+	}
+}
+
+createLinks(1, [
+	{text: 'The Students', href: '/about-us/', xStart:30},
+	{text: 'The Game', href: '/about-game/', xStart:45},
+	{text: 'Online Demo', href: '/about-game/demo', xStart:30}
+]);
+createLinks(2, [
+	{text: 'Full Gallery', href: '/about-game/gallery/', xStart:30},
+	{text: 'Download', href: '/about-game/download', xStart:45},
+	{text: 'Source code', href: 'https://github.com/ProjectChroma/Chroma', xStart:30}
+]);
+</script>
