@@ -1,0 +1,27 @@
+#image-grid {
+  width: 100%;
+  text-align: center;
+  /*Center images within grid*/
+}
+#image-grid > img {
+  margin: 5px;
+}
+#modal-bkg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: rgba(85, 85, 85, 0.7);
+  opacity: 0;
+  z-index: -1;
+}
+#modal-img {
+  max-width: 65%;
+  max-height: 80%;
+  display: block;
+  margin: auto;
+}
+
