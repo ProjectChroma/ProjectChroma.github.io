@@ -5,14 +5,25 @@
 	</head>
 	<body>
 		<div id='image-grid'/>
+		<include href='freewall'/>
 	</body>
 </html>
 <script class='seteRun'>
+//From http://indiegamr.com/generate-repeatable-random-numbers-in-js/ with edits
+Math.seed = 1;
+Math.rand = function(max, min){
+	Math.seed = (Math.seed * 9301 + 49297) % 233280;
+	var rnd = Math.seed / 233280.0;
+	return min + rnd * (max - min);
+}
+//End IndieGamr
+
 var grid = document.getElementById('image-grid');
 var files = page.getInputFile().getParentFile().listFiles();
 for(var i=0; i<files.length; i++){
 	if(files[i].getName().endsWith('.png')){
-		grid.appendChild(document.createElement('img').attr('src', files[i].getName()));
+		var width = Math.floor(Math.rand(45, 25));
+		grid.appendChild(document.createElement('img').attr('src', files[i].getName()).attr('style', 'width: ' + width + '%'));
 	}
 }
 </script>
