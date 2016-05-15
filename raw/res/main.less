@@ -29,7 +29,7 @@
 @content-font: 'Bree Serif';
 @header-height: 60px;
 
-//Background coloring
+/*Background coloring*/
 .light{background-color: @white; color: @black;}
 .dark{background-color: @black; color: @white;}
 .red{background-color: @red;}
@@ -37,7 +37,7 @@
 .blue{background-color: @blue;}
 .green{background-color: @green;}
 
-//General CSS
+/*General CSS*/
 *{margin: 0; padding: 0;}
 p{margin-bottom: 1em;}
 body{
@@ -69,7 +69,6 @@ body{
 		
 		background-color: @gold;
 		&:hover{background-color: @gold-light1;}
-		z-index: 0;
 		
 		padding: 0px 10px;
 		
@@ -94,7 +93,7 @@ body{
 			background-color: @gold-light1;
 			
 			list-style: none;
-			z-index: 10;
+			z-index: 1;
 			& > li:hover{background-color: (@gold-light2 - #1A1A1A);}
 			& > li > a{
 				display: inline-block;
@@ -120,7 +119,7 @@ body{
 	}
 }
 
-//Home page hexagons
+/*Home page hexagons*/
 svg{
 	margin: 5px;
 	& > text{

@@ -28,7 +28,7 @@ $(window).on('keydown', function(event){
 
 function showModal(index, src){
 	img.attr('src', src).attr('data-index', index);
-	bkg.css('z-index', 1).animate({
+	bkg.css('z-index', 2).animate({
 		'opacity': 1
 	}, 1000);
 	img.css('margin-top', (window.innerHeight - img.height()) / 2 + 'px');
