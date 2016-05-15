@@ -44,6 +44,10 @@ body.dark > #header {
   display: inline;
   vertical-align: middle;
 }
+#logo {
+  height: 100%;
+  vertical-align: middle;
+}
 #navigation {
   font-size: 16pt;
   display: inline-block;
