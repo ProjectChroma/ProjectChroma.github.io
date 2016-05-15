@@ -1,3 +1,4 @@
+/*Background coloring*/
 .light,
 body {
   background-color: #dddddd;
@@ -19,6 +20,7 @@ body {
 .green {
   background-color: #2d882d;
 }
+/*General CSS*/
 * {
   margin: 0;
   padding: 0;
@@ -58,7 +60,6 @@ body.dark > #header {
   height: 100%;
   position: relative;
   background-color: #aa8e39;
-  z-index: 0;
   padding: 0px 10px;
 }
 #navigation > div:hover {
@@ -83,7 +84,7 @@ body.dark > #header {
   padding: 12px 16px;
   background-color: #d4ba6a;
   list-style: none;
-  z-index: 10;
+  z-index: 1;
 }
 #navigation > div > ul > li:hover {
   background-color: #e5d090;
@@ -110,6 +111,7 @@ body.dark > #header {
   display: inline;
   width: 40%;
 }
+/*Home page hexagons*/
 svg {
   margin: 5px;
 }
