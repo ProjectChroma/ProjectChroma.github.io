@@ -10,7 +10,7 @@ $.getJSON('https://api.github.com/repos/ProjectChroma/Chroma/milestones', {state
 		var progress = $('<span></span>').addClass('progress-bar').appendTo(eMilestone);
 		$('<span></span>').addClass('progress').css('width', completion + '%').appendTo(progress);
 		var issueList = $('<ul></ul>').appendTo(eMilestone);
-		$.getJSON('https://api.github.com/repos/ProjectChroma/Chroma/issues', {milestone: milestone.number}, function(issues){
+		$.getJSON('https://api.github.com/repos/ProjectChroma/Chroma/issues', {milestone: milestone.number, state: 'all'}, function(issues){
 			for(var i=issues.length; i>0; --i){
 				var issue = issues[i-1];
 				var eIssue = $('<li></li>').addClass('issue').toggleClass('complete', issue.state == 'closed').appendTo(issueList);
