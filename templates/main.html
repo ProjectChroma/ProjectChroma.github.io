@@ -5,7 +5,7 @@
 		<link rel='stylesheet' type='text/css' href='/res/main.css'/>
 		
 		<script src='https://code.jquery.com/jquery-1.12.3.min.js' integrity='sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=' crossorigin='anonymous'></script>
-		<script src='/res/main.js'></script>
+		<script src='/res/scheme.js'></script>
 		<title></title>
 		
 		<meta class='seteInclude' href='icon'/>
@@ -54,6 +54,7 @@ if(page.getAttribute('page-title')){
 	document.getElementsByTag('title').first().text(siteTitle);
 }
 var links = document.select('a[href^=http]');
+links.addClass('external');
 for(var i=links.size(); i>0; --i){
 	var link = links.get(i-1);
 	if(!link.hasAttr('target')) link.attr('target', '_blank');
