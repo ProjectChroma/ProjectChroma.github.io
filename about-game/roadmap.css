@@ -7,11 +7,32 @@
 .milestone {
   border-left: 5px solid #555;
 }
+.milestone > h2 {
+  display: inline-block;
+}
+.progress-bar {
+  display: inline-block;
+  width: 300px;
+  height: 15px;
+  background-color: #aaa;
+  margin-left: 10px;
+  border-radius: 3px;
+  overflow: hidden;
+  /*Progress inside doesn't have wrapped corners, so prevent its square corners from overflowing outside these rounded corners*/
+}
+body.dark .progress-bar {
+  background-color: #444;
+}
+.progress-bar > .progress {
+  display: inline-block;
+  background-color: #228B22;
+  height: 100%;
+}
 .issue {
   border-left: 5px solid #888;
 }
 .issue.complete {
-  border-left-color: #8F8;
+  border-left-color: #3C3;
 }
 .issue p {
   margin: 0;
