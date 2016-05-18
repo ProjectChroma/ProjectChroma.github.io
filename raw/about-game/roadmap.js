@@ -1,5 +1,5 @@
 var converter = new showdown.Converter();
-$.getJSON('https://api.github.com/repos/ProjectChroma/Chroma/milestones', {state: 'open', sort: 'completeness', direction: 'desc'}, function(milestones){
+$.getJSON('https://api.github.com/repos/ProjectChroma/Chroma/milestones', {state: 'open', sort: 'due_on', direction: 'desc'}, function(milestones){//Sorting by due_on when nothing has a due date gives them in numeric order
 	var container = $('<ul></ul>').attr('id', 'roadmap');
 	for(var m=0; m<milestones.length; m++){
 		var milestone = milestones[m];
