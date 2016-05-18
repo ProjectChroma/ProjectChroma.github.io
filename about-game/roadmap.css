@@ -34,6 +34,33 @@ body.dark .progress-bar {
 .issue.complete {
   border-left-color: #22aa22;
 }
+.issue.active {
+  border-left-color: #6666ff;
+}
+.issue > h3 > button {
+  width: 1.5em;
+  height: 1.5em;
+  border: none;
+}
+.issue > h3 > button.expand {
+  background-color: green;
+  color: white;
+  margin-left: 5px;
+  border-radius: 3px 0px 0px 3px;
+}
+.issue > h3 > button.collapse {
+  background-color: white;
+  border-radius: 0px 3px 3px 0px;
+}
+.issue .assignee {
+  color: #6666ff;
+}
+.issue .assignee > img {
+  height: 1.5em;
+  vertical-align: middle;
+  margin: 0px 5px;
+  /*5px margin on all sides*/
+}
 .issue p {
   margin: 0;
 }
@@ -41,4 +68,8 @@ body.dark .progress-bar {
 .issue ul {
   margin-left: 16px;
 }
+.issue > *:not(h3) {
+  display: none;
+}
+/*Can be shown with JS buttons*/
 

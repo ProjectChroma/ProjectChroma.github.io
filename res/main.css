@@ -104,6 +104,9 @@ body.dark > #header {
 #content.center {
   text-align: center;
 }
+#content a {
+  color: inherit;
+}
 .image-wrapper {
   text-align: center;
 }
