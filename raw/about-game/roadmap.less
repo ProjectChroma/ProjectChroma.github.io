@@ -1,4 +1,6 @@
 @completion-green: #2A2;
+@active-blue: #66F;
+@button-radius: 3px;
 .issue, .milestone{
 	list-style: none;
 	padding-left: 10px;
@@ -25,9 +27,32 @@
 }
 .issue{
 	border-left: 5px solid #888;
-	&.complete{
-		border-left-color: @completion-green;
+	&.complete{border-left-color: @completion-green;}
+	&.active{border-left-color: @active-blue;}
+	& > h3 > button{
+		width: 1.5em;
+		height: 1.5em;
+		border: none;
+		&.expand{
+			background-color: green;
+			color: white;
+			margin-left: 5px;
+			border-radius: @button-radius 0px 0px @button-radius;
+		}
+		&.collapse{
+			background-color: white;
+			border-radius: 0px @button-radius @button-radius 0px;
+		}
+	}
+	& .assignee{
+		color: @active-blue;
+		& > img{
+			height: 1.5em;
+			vertical-align: middle;
+			margin: 0px 5px;/*5px margin on all sides*/
+		}
 	}
 }
 .issue p{margin: 0;}/*Override margin-bottom set for main site CSS*/
 .issue ul{margin-left: 16px;}
+.issue > *:not(h3){display: none;}/*Can be shown with JS buttons*/
