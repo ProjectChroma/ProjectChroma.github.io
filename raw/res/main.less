@@ -58,7 +58,7 @@ body{
 	height: 100%;
 	vertical-align: middle;
 }
-#navigation{
+#navigation, #social-nav{
 	font-size: 16pt;
 	display: inline-block;
 	height: 100%;
@@ -66,6 +66,7 @@ body{
 		display: inline-block;
 		height: 100%;
 		position: relative;
+		&.social{float: right;}
 		
 		background-color: @gold;
 		&:hover{background-color: @gold-light1;}
@@ -102,6 +103,16 @@ body{
 		}
 		&:hover > ul{
 			display: block;
+		}
+	}
+}
+#social-nav{
+	float: right;
+	& > div{
+		background-color: @white;
+		&:hover{background-color: white;}
+		& > a > img{
+			height: 100%;
 		}
 	}
 }

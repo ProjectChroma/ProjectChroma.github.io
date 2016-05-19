@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<template>main</template>
+		<attr key='page-title' value='News'/>
+	</head>
+	<body>
+		<ul id='news-list'>
+			
+		</ul>
+	</body>
+</html>
+<script class='seteRun'>
+var container = document.getElementById('news-list');
+var files = page.getInputFile().getParentFile().listFiles();
+var pages = [];
+for(var i=files.length; i>0; --i){
+	if(files[i-1].getName() != 'index.html' && files[i-1].getName().endsWith('.html')) pages.push(site.getPage(files[i-1]));
+}
+pages.sort(function(a, b){
+	return Date.parse(a.getAttribute('date')).valueOf() - Date.parse(b.getAttribute('date')).valueOf();
+});
+for(var i=pages.length; i>0; --i){
+	container.appendChild(document.createElement('li').text(pages[i-1].getAttribute('page-title')));
+}
+</script>
