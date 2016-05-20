@@ -50,31 +50,41 @@ body.dark > #header {
   height: 100%;
   vertical-align: middle;
 }
-#navigation {
+#navigation,
+#social-nav {
   font-size: 16pt;
   display: inline-block;
   height: 100%;
 }
-#navigation > div {
+#navigation > div,
+#social-nav > div {
   display: inline-block;
   height: 100%;
   position: relative;
   background-color: #aa8e39;
   padding: 0px 10px;
 }
-#navigation > div:hover {
+#navigation > div.social,
+#social-nav > div.social {
+  float: right;
+}
+#navigation > div:hover,
+#social-nav > div:hover {
   background-color: #d4ba6a;
 }
-#navigation > div a {
+#navigation > div a,
+#social-nav > div a {
   color: white;
   text-decoration: none;
 }
-#navigation > div > a {
+#navigation > div > a,
+#social-nav > div > a {
   display: inline-block;
   height: 60px;
   line-height: 60px;
 }
-#navigation > div > ul {
+#navigation > div > ul,
+#social-nav > div > ul {
   /*Dropdown content*/
   display: none;
   position: absolute;
@@ -86,15 +96,30 @@ body.dark > #header {
   list-style: none;
   z-index: 1;
 }
-#navigation > div > ul > li:hover {
+#navigation > div > ul > li:hover,
+#social-nav > div > ul > li:hover {
   background-color: #e5d090;
 }
-#navigation > div > ul > li > a {
+#navigation > div > ul > li > a,
+#social-nav > div > ul > li > a {
   display: inline-block;
   width: 100%;
 }
-#navigation > div:hover > ul {
+#navigation > div:hover > ul,
+#social-nav > div:hover > ul {
   display: block;
+}
+#social-nav {
+  float: right;
+}
+#social-nav > div {
+  background-color: #dddddd;
+}
+#social-nav > div:hover {
+  background-color: white;
+}
+#social-nav > div > a > img {
+  height: 100%;
 }
 #content {
   font-family: 'Bree Serif';

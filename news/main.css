@@ -1,0 +1,13 @@
+#news-list {
+  list-style: none;
+}
+#news-list > li {
+  margin-bottom: 20px;
+}
+#news-list > li > p {
+  margin: 0;
+}
+#news-list > li > p > a {
+  margin-left: 10px;
+}
+
