@@ -3,6 +3,18 @@
 		<template>main</template>
 	</head>
 	<body>
+		<span id='info'></span><br/>
+		<a href='/news/'>Back to the news feed</a>
 		<content/>
 	</body>
 </html>
+<script class='seteRun'>
+var info = page.getAttribute('date');
+if(page.getAttribute('author')){
+	info += ' | author: ';
+	var author = page.getAttribute('author'), username = author.match(/@[a-zA-Z0-9]+/);
+	if(username) author = author.replace(username, '<a href="https://github.com/' + (username + '').slice(1) + '">' + username + '</a>');
+	info += author;
+}
+document.getElementById('info').html(info);
+</script>
