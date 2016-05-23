@@ -1,7 +1,11 @@
-#image-grid{
-	width: 100%;
-	text-align: center;/*Center images within grid*/
-	& > img{margin: 5px;}
+.image-wrapper{
+	text-align: center;/*Center images in grid*/
+	& > img{
+		display: inline;
+		margin: 10px;
+	}
+	&[data-cols='2'] > img{width: 40%;}
+	&[data-cols='3'] > img{width: 30%;}
 }
 #modal-bkg{
 	position: fixed;
