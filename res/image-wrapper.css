@@ -1,10 +1,16 @@
-#image-grid {
-  width: 100%;
+.image-wrapper {
   text-align: center;
-  /*Center images within grid*/
+  /*Center images in grid*/
 }
-#image-grid > img {
-  margin: 5px;
+.image-wrapper > img {
+  display: inline;
+  margin: 10px;
+}
+.image-wrapper[data-cols='2'] > img {
+  width: 40%;
+}
+.image-wrapper[data-cols='3'] > img {
+  width: 30%;
 }
 #modal-bkg {
   position: fixed;

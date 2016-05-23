@@ -132,13 +132,6 @@ body.dark > #header {
 #content a {
   color: inherit;
 }
-.image-wrapper {
-  text-align: center;
-}
-.image-wrapper > img {
-  display: inline;
-  width: 40%;
-}
 /*Home page hexagons*/
 svg {
   margin: 5px;
