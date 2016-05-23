@@ -16,7 +16,7 @@
 			<h1>Project:Chroma</h1>
 			<div id='navigation'>
 				<div><a href='/'>Home</a></div>
-				<div><a href='/'>News</a></div>
+				<div><a href='/news/'>News</a></div>
 				<div>
 					<a href='/about-us/'>About Us</a>
 					<ul>
@@ -50,11 +50,13 @@ var siteTitle = 'Project:Chroma';
 if(page.getAttribute('page-title')){
 	document.getElementsByTag('title').first().text(page.getAttribute('page-title') + ' - ' + siteTitle);
 	var content = document.getElementById('content');
-	var contentTitle = document.createElement('h1').text(page.getAttribute('page-title'));
-	if(content.children().isEmpty()){
-		content.appendChild(contentTitle);
-	}else{
-		content.children().first().before(contentTitle);
+	if(!page.getAttribute('no-title')){
+		var contentTitle = document.createElement('h1').text(page.getAttribute('page-title'));
+		if(content.children().isEmpty()){
+			content.appendChild(contentTitle);
+		}else{
+			content.children().first().before(contentTitle);
+		}
 	}
 }else{
 	document.getElementsByTag('title').first().text(siteTitle);

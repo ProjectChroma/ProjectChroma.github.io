@@ -2,6 +2,8 @@
 	<head>
 		<template>main</template>
 		<attr key='page-title' value='News'/>
+		<link rel='stylesheet' type='text/css' href='main.css'/>
+		<attr key='no-title' value='true'/>
 	</head>
 	<body>
 		<ul id='news-list'>
@@ -10,16 +12,34 @@
 	</body>
 </html>
 <script class='seteRun'>
+var leadLength = 400;
 var container = document.getElementById('news-list');
 var files = page.getInputFile().getParentFile().listFiles();
 var pages = [];
 for(var i=files.length; i>0; --i){
 	if(files[i-1].getName() != 'index.html' && files[i-1].getName().endsWith('.html')) pages.push(site.getPage(files[i-1]));
 }
-pages.sort(function(a, b){
+if(!pages.length){
+	container.appendChild(document.createElement('p').text('Looks like no news yet. Check back later.'));
+}
+pages.sort(function(a, b){//Sort based on date posted (earliest first)
 	return Date.parse(a.getAttribute('date')).valueOf() - Date.parse(b.getAttribute('date')).valueOf();
 });
-for(var i=pages.length; i>0; --i){
-	container.appendChild(document.createElement('li').text(pages[i-1].getAttribute('page-title')));
+for(var i=pages.length; i>0; --i){//Run through array backwards to get newest first
+	var newsPage = pages[i-1];
+	var el = document.createElement('li');
+	el.appendChild(document.createElement('h1').text(newsPage.getAttribute('page-title')));
+	el.appendChild(document.createElement('span').html(newsPage.getDocument().getElementById('info').html()));
+	
+	var leadText = newsPage.getDocument().getElementById('content').getElementsByTag('p').first().text();
+	if(leadText.length() > leadLength){
+		var ind = leadText.slice(0, leadLength-3).lastIndexOf(' ');
+		leadText = leadText.slice(0, ind);
+		if(!leadText.endsWith('.') && !leadText.endsWith('!') && !leadText.endsWith('?')) leadText = leadText + '...';
+	}
+	var p = document.createElement('p').text(leadText);
+	p.appendChild(document.createElement('a').attr('href', newsPage.getOutputFile().getName().slice(0, -5)).text('Read more >'));
+	el.appendChild(p);
+	container.appendChild(el);
 }
 </script>
