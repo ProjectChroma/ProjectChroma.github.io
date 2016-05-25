@@ -2,14 +2,15 @@
   text-align: center;
   /*Center images in grid*/
 }
-.image-wrapper > img {
-  display: inline;
+.image-wrapper > * {
+  display: inline-block;
   margin: 10px;
+  vertical-align: middle;
 }
-.image-wrapper[data-cols='2'] > img {
+.image-wrapper[data-cols='2'] > * {
   width: 40%;
 }
-.image-wrapper[data-cols='3'] > img {
+.image-wrapper[data-cols='3'] > * {
   width: 30%;
 }
 #modal-bkg {
