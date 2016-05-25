@@ -62,6 +62,7 @@ body.dark > #header {
   height: 100%;
   position: relative;
   background-color: #aa8e39;
+  transition: background-color 0.5s;
   padding: 0px 10px;
 }
 #navigation > div.social,
@@ -95,6 +96,11 @@ body.dark > #header {
   background-color: #d4ba6a;
   list-style: none;
   z-index: 1;
+}
+#navigation > div > ul > li,
+#social-nav > div > ul > li {
+  background-color: #d4ba6a;
+  transition: background-color 0.5s;
 }
 #navigation > div > ul > li:hover,
 #social-nav > div > ul > li:hover {
