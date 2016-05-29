@@ -1,18 +1,22 @@
 <html>
 	<head>
 		<template>main</template>
+		<link rel='stylesheet' type='text/css' href='main.css'/>
 	</head>
 	<body>
-		<span id='info'></span><br/>
-		<a href='/news/'>Back to the news feed</a>
+		<span id='info-row'>
+			<span id='info'></span>
+			<span>|</span>
+			<a href='/news/' id='news-home'>Back to all news</a>
+		</span>
 		<content/>
 	</body>
 </html>
 <script class='seteRun'>
 var info = page.getAttribute('date');
 if(page.getAttribute('author')){
-	info += ' | author: ';
-	var author = page.getAttribute('author'), username = author.match(/@[a-zA-Z0-9]+/);
+	info += ' | Author: ';
+	var author = page.getAttribute('author'), username = author.match(/@[a-zA-Z0-9]+/);//Look for github usernames
 	if(username) author = author.replace(username, '<a href="https://github.com/' + (username + '').slice(1) + '">' + username + '</a>');
 	info += author;
 }
