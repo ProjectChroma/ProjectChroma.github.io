@@ -2,13 +2,12 @@
 	<head>
 		<template>main</template>
 		<attr key='page-title' value='News'/>
+		<link rel='stylesheet' type='text/css' href='home.css'/>
 		<link rel='stylesheet' type='text/css' href='main.css'/>
 		<attr key='no-title' value='true'/>
 	</head>
 	<body>
-		<ul id='news-list'>
-			
-		</ul>
+		<ul id='news-list'/>
 	</body>
 </html>
 <script class='seteRun'>
@@ -29,7 +28,7 @@ for(var i=pages.length; i>0; --i){//Run through array backwards to get newest fi
 	var newsPage = pages[i-1];
 	var el = document.createElement('li');
 	el.appendChild(document.createElement('h1').text(newsPage.getAttribute('page-title')));
-	el.appendChild(document.createElement('span').html(newsPage.getDocument().getElementById('info').html()));
+	el.appendChild(document.createElement('span').attr('class', 'info').html(newsPage.getDocument().getElementById('info').html()));
 	
 	var leadText = newsPage.getDocument().getElementById('content').getElementsByTag('p').first().text();
 	if(leadText.length() > leadLength){
