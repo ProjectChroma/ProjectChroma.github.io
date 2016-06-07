@@ -1,13 +1,8 @@
-#news-list {
-  list-style: none;
+#info-row {
+  color: #676767;
+  font-size: 80%;
 }
-#news-list > li {
-  margin-bottom: 20px;
-}
-#news-list > li > p {
-  margin: 0;
-}
-#news-list > li > p > a {
-  margin-left: 10px;
+body.dark #info-row {
+  color: #888;
 }
 
