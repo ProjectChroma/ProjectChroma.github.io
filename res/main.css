@@ -75,7 +75,6 @@ body.dark > #header {
 }
 #navigation > div a,
 #social-nav > div a {
-  color: white;
   text-decoration: none;
 }
 #navigation > div > a,
@@ -90,21 +89,14 @@ body.dark > #header {
   display: none;
   position: absolute;
   top: 60px;
-  left: 0px;
   min-width: 160px;
   padding: 12px 16px;
-  background-color: #d4ba6a;
   list-style: none;
   z-index: 1;
 }
 #navigation > div > ul > li,
 #social-nav > div > ul > li {
-  background-color: #d4ba6a;
   transition: background-color 0.5s;
-}
-#navigation > div > ul > li:hover,
-#social-nav > div > ul > li:hover {
-  background-color: #e5d090;
 }
 #navigation > div > ul > li > a,
 #social-nav > div > ul > li > a {
@@ -115,14 +107,40 @@ body.dark > #header {
 #social-nav > div:hover > ul {
   display: block;
 }
+#navigation > div a {
+  color: white;
+}
+#navigation > div > ul {
+  left: 0;
+  background-color: #d4ba6a;
+}
+#navigation > div > ul > li {
+  background-color: #d4ba6a;
+}
+#navigation > div > ul > li:hover {
+  background-color: #e5d090;
+}
+#social-nav > div a {
+  color: black;
+}
+#social-nav > div > ul {
+  right: 0;
+  background-color: #dddddd;
+}
+#social-nav > div > ul > li {
+  background-color: #dddddd;
+}
+#social-nav > div > ul > li:hover {
+  background-color: white;
+}
 #social-nav {
   float: right;
 }
 #social-nav > div {
-  background-color: #dddddd;
+  background-color: #bbbbbb;
 }
 #social-nav > div:hover {
-  background-color: white;
+  background-color: #dddddd;
 }
 #social-nav > div > a > img {
   height: 100%;

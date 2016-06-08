@@ -7,6 +7,9 @@
   margin: 10px;
   vertical-align: middle;
 }
+.image-wrapper[data-cols='1'] > * {
+  height: 300px;
+}
 .image-wrapper[data-cols='2'] > * {
   width: 40%;
 }
